@@ -1,7 +1,7 @@
 {
   "name": "kira.js",
   "version": "1.0.0",
-  "exports": "./dist/main.js",
+  "exports": "./built/main.js",
   "license": "MIT",
   "scripts": {
     "build": "yarn tsc"

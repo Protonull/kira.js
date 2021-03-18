@@ -31,7 +31,10 @@ class KiraJS {
         this.#requestCount = 0;
         this.#connection = new reconnecting_websocket_1.default((options?.kira?.protocol ?? defaults.KiraProtocol) + "://" +
             (options?.kira?.host ?? defaults.KiraHost) + ":" +
-            (options?.kira?.port ?? defaults.KiraPort), [], {
+            (options?.kira?.port ?? defaults.KiraPort) + "/" +
+            "?apiToken=" + (options?.token) +
+            "&applicationId=" + (options?.name) +
+            "&apiVersion=1", [], {
             WebSocket: ws_1.default,
             minReconnectionDelay: 10_000,
             connectionTimeout: 1_000,

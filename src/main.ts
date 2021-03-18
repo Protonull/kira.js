@@ -28,7 +28,10 @@ export default class KiraJS {
         this.#connection = new websocket(
             (options?.kira?.protocol ?? defaults.KiraProtocol) + "://" +
             (options?.kira?.host ?? defaults.KiraHost) + ":" +
-            (options?.kira?.port ?? defaults.KiraPort),
+            (options?.kira?.port ?? defaults.KiraPort) + "/" +
+            "?apiToken=" + (options?.token) +
+            "&applicationId=" + (options?.name) +
+            "&apiVersion=1",
             [],
             {
                 WebSocket: WS,
